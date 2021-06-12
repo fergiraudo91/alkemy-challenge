@@ -1,0 +1,11 @@
+.main{
+    background-color: #581845;
+    margin: 0;
+    text-align: center;
+    color: orange;
+    min-height: 100vh;
+}
+
+.search-group{
+    display: flex;
+}

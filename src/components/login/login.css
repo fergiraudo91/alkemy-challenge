@@ -1,0 +1,52 @@
+.login-screen {
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  background-color: #581845;
+  color: orange;
+  width: 40%;
+  border-radius: 5px;
+  box-shadow: 7px 20px 16px -3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 7px 20px 16px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 7px 20px 16px -3px rgba(0, 0, 0, 0.75);
+}
+
+.btn{
+    background-color: orange;
+    font-weight: bold;
+    color: black;
+}
+
+.form-control{
+    background-color: #A770B2;
+}
+
+.login-form {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.main-login-screen {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  background-color: #E2CEE5;
+}
+
+.field{
+    display: block;
+    text-align: left;
+}
+
+@media screen and (max-width: 690px) {
+    .login-screen{
+        width: 80%;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    
+}
