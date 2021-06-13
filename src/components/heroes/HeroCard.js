@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import './herocard.css';
 
 export const HeroCard = ({ hero }) => {
@@ -24,7 +25,7 @@ export const HeroCard = ({ hero }) => {
             </div>
             <div className="card-buttons">
                 <button className="btn btn-warning">Add Hero</button>
-                <button className="btn btn-warning">See More...</button>
+                <Link to={`./hero/${hero.id}`} className="btn btn-warning">See More...</Link>
             </div>
         </div>
     );

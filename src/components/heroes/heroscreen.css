@@ -1,0 +1,46 @@
+.hero-appearance{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.hero-details{
+    text-align: left;
+    color: #18191A;
+}
+
+.hero-list{
+    width: 96%;
+    border-radius: 5px;
+}
+
+.hero-list li{
+    background-color: #FFF;
+}
+
+.title-detail{
+    color: #48005E;
+}
+
+@media screen and (max-width: 800px) {
+    .col4{
+        width: 80%;
+        max-width: 100% !important;
+    }
+    .hero-pic{
+        max-width: 100% !important;
+    }
+    .hero-details{
+        max-width: 100%;
+    }
+    .col-8{
+        display: block !important;
+    }
+    .row{
+        display: block;
+    }
+    .hero-appearance{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

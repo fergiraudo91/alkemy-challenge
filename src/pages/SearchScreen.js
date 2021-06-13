@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { HeroCard } from "../components/heroes/HeroCard";
+import { Spiner } from "../components/ui/Spiner";
 import { useForm } from "../hooks/useForm";
 import "./searchScreen.css";
 
@@ -54,10 +55,8 @@ export const SearchScreen = () => {
             </button>
           </div>
         </form>
-        {loading ? (
-          <div className="spinner-border text-warning" style={{width : "3rem", height: "3rem"}} role="status">
-            <span className="sr-only">Loading...</span>
-          </div>)
+        {loading ? 
+          <Spiner />
           :
           (<div>
             {
