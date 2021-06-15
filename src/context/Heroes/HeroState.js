@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer } from 'react';
 import HeroContext from './HeroContext';
 import HeroReducer from './HeroReducer';
 const HeroState = (props) => {
