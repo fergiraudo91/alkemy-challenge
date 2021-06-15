@@ -1,46 +1,26 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import HeroContext from "../context/Heroes/HeroContext";
+import getHeroesStatistics from "../helpers/getHeroesStatistics";
 import "./homescreen.css";
 
 export const HomeScreen = () => {
   const { heroes } = useContext(HeroContext);
-  const accIntelligence =
-    heroes.length > 0
-      ? heroes
-          .map((hero) => +hero.powerstats.intelligence)
-          .reduce((prev, next) => prev + next)
-      : 0;
-  const accStrength =
-    heroes.length > 0
-      ? heroes
-          .map((hero) => +hero.powerstats.strength)
-          .reduce((prev, next) => prev + next)
-      : 0;
-  const accSpeed =
-    heroes.length > 0
-      ? heroes
-          .map((hero) => +hero.powerstats.speed)
-          .reduce((prev, next) => prev + next)
-      : 0;
-  const accDurability =
-    heroes.length > 0
-      ? heroes
-          .map((hero) => +hero.powerstats.durability)
-          .reduce((prev, next) => prev + next)
-      : 0;
-  const accPower =
-    heroes.length > 0
-      ? heroes
-          .map((hero) => +hero.powerstats.power)
-          .reduce((prev, next) => prev + next)
-      : 0;
-  const accCombat =
-    heroes.length > 0
-      ? heroes
-          .map((hero) => +hero.powerstats.combat)
-          .reduce((prev, next) => prev + next)
-      : 0;
+
+  const {
+    heroesAmount,
+    accIntelligence,
+    accStrength,
+    accSpeed,
+    accDurability,
+    accPower,
+    accCombat,
+    averageHeight,
+    averageWeight
+  } = getHeroesStatistics(heroes);
+
+  console.log(averageHeight, "cm");
+  console.log(averageWeight, "kg");
   console.log("Intelligence: ", accIntelligence);
   console.log("Strength: ", accStrength);
   console.log("Speed: ", accSpeed);
@@ -51,7 +31,7 @@ export const HomeScreen = () => {
   return (
     <div className="main">
       <h1>My Team</h1>
-      {heroes.length > 0 ? (
+      {heroesAmount > 0 ? (
         <div>Heroes bla bla</div>
       ) : (
         <div className="empty-hero">
