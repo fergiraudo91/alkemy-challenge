@@ -1,10 +1,11 @@
 import { useEffect, useReducer } from 'react';
 import { AuthContext } from './auth/AuthContext';
 import { authReducer } from './auth/authReducer';
+import HeroState from './context/Heroes/HeroState';
 import { AppRouter } from './routers/AppRouter';
 
 const init = () => {
-  return JSON.parse(localStorage.getItem('user')) || {logged: false};
+  return JSON.parse(localStorage.getItem('user')) || { logged: false };
 }
 
 function HeroesApp() {
@@ -14,10 +15,13 @@ function HeroesApp() {
     localStorage.setItem('user', JSON.stringify(user));
   }, [user]);
 
+
   return (
-    <AuthContext.Provider value={{user, dispatch}}>
-      <AppRouter />
-    </AuthContext.Provider>
+    <HeroState>
+      <AuthContext.Provider value={{ user, dispatch}}>
+        <AppRouter />
+      </AuthContext.Provider>
+    </HeroState>
   );
 }
 

@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import './herocard.css';
 
-export const HeroCard = ({ hero }) => {
+export const HeroCard = ({ hero, handleAddHero }) => {
     return (
         <div className="card ms-3" style={{ maxWidth: "300px" }}>
             <div className="row no-gutters">
@@ -24,7 +25,7 @@ export const HeroCard = ({ hero }) => {
                 </div>
             </div>
             <div className="card-buttons">
-                <button className="btn btn-warning">Add Hero</button>
+                <button onClick={()=>handleAddHero(hero.name)} className="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Add Hero</button>
                 <Link to={`./hero/${hero.id}`} className="btn btn-warning">See More...</Link>
             </div>
         </div>

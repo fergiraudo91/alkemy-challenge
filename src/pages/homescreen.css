@@ -1,0 +1,24 @@
+.empty-hero {
+  width: 50%;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  color: #18191a;
+  box-shadow: 7px 20px 16px -3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 7px 20px 16px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 7px 20px 16px -3px rgba(0, 0, 0, 0.75);
+}
+
+@media screen and (max-width: 800px) {
+    .empty-hero{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .empty-hero{
+        width: 90%;
+    }
+}
