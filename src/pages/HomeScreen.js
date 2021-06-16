@@ -6,7 +6,7 @@ import "./homescreen.css";
 
 export const HomeScreen = () => {
   const { heroes } = useContext(HeroContext);
-
+  console.log(heroes);
   const {
     heroesAmount,
     accIntelligence,

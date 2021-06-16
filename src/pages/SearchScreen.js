@@ -85,6 +85,15 @@ export const SearchScreen = () => {
     getHeroesInfo();
   }, [searchTerm]);
 
+  useEffect(() => {
+    const heroState = {
+      heroes,
+      good,
+      evil
+    }
+   localStorage.setItem("heroes", JSON.stringify(heroState));
+  }, [heroes, good, evil])
+
   return (
     <>
       <div className="main">
