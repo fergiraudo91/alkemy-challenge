@@ -11,18 +11,19 @@ const HeroState = (props) => {
       };
 
   const [state, dispatch] = useReducer(HeroReducer, initialState);
+  console.log(state);
 
-  const addGood = () => {
+  const addGood = (quantity) => {
     dispatch({
       type: "ADD_GOOD",
-      payload: 1,
+      payload: quantity,
     });
   };
 
-  const addEvil = () => {
+  const addEvil = (quantity) => {
     dispatch({
       type: "ADD_EVIL",
-      payload: 1,
+      payload: quantity,
     });
   };
 
@@ -33,7 +34,12 @@ const HeroState = (props) => {
     });
   };
 
-  const deleteHeroes = () => {};
+  const deleteHeroes = (heroId) => {
+    dispatch({
+      type: "DELETE_HERO",
+      payload: heroId
+    })
+  };
 
   return (
     <HeroContext.Provider

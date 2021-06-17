@@ -26,6 +26,13 @@ const HeroReducer = (state, action) => {
                 ...state,
                 evil: state.evil + payload
             }
+
+        case DELETE_HERO:
+            return{
+                heroes: state.heroes.filter(hero => hero.id !== payload),
+                good: state.good,
+                evil: state.evil
+            }
     
         default:
             break;

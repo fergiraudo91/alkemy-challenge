@@ -7,10 +7,10 @@ import HeroContext from "../context/Heroes/HeroContext";
 import { useForm } from "../hooks/useForm";
 import "./searchScreen.css";
 
-
 export const SearchScreen = () => {
-  const { addHeroes, heroes, good, addGood, evil, addEvil } = useContext(HeroContext);
-  const URL = "https://superheroapi.com/api/";
+  const { addHeroes, heroes, good, addGood, evil, addEvil } =
+    useContext(HeroContext);
+  const URL = "https://superheroapi.com/api.php/";
   const API = "10222975487554224";
   const [value, handleInputChange] = useForm({ search: "" });
   const [modal, setModal] = useState("");
@@ -26,51 +26,49 @@ export const SearchScreen = () => {
 
   const handleAddHero = (hero) => {
     console.log(evil, addEvil);
-    const {alignment} = hero.biography;
-    if(heroes.find(h => h.id === hero.id)){
+    const { alignment } = hero.biography;
+    if (heroes.find((h) => h.id === hero.id)) {
       setModal({
-        title: 'The hero wasn`t added',
+        title: "The hero wasn`t added",
         text: `The hero ${hero.name} is already on the team!`,
-        background: 'bg-danger',
-        color: 'text-white'
+        background: "bg-danger",
+        color: "text-white",
       });
       return;
     }
-    if(alignment === "good"){
-      if(good === 3){
+    if (alignment === "good") {
+      if (good === 3) {
         setModal({
-          title: 'The hero wasn`t added',
+          title: "The hero wasn`t added",
           text: "You already have three good heroes",
-          background: 'bg-danger',
-          color: 'text-white'
+          background: "bg-danger",
+          color: "text-white",
         });
         return;
       }
-      addGood();
-    }
-    else{
-      if(evil === 3){
+      addGood(1);
+    } else {
+      if (evil === 3) {
         setModal({
-          title: 'The hero wasn`t added',
+          title: "The hero wasn`t added",
           text: "You already have three bad heroes",
-          background: 'bg-danger',
-          color: 'text-white'
+          background: "bg-danger",
+          color: "text-white",
         });
         return;
       }
-      addEvil();
+      addEvil(1);
     }
     addHeroes(hero);
     setModal({
       title: "The hero was added",
       text: `The hero ${hero.name} was added to your team`,
-      background: 'bg-white',
-      color: 'text-body'
+      background: "bg-white",
+      color: "text-body",
     });
-  }
+  };
 
   useEffect(() => {
-    
     if (searchTerm === "default") {
       return;
     }
@@ -78,7 +76,8 @@ export const SearchScreen = () => {
       setLoading(true);
       setError(false);
       let response = await axios.get(`${URL}${API}/search/${searchTerm}`);
-      response.data.response === "success" ? setHeroesInfo(response.data.results)
+      response.data.response === "success"
+        ? setHeroesInfo(response.data.results)
         : setError(response.data.error);
       setLoading(false);
     };
@@ -89,18 +88,19 @@ export const SearchScreen = () => {
     const heroState = {
       heroes,
       good,
-      evil
-    }
-   localStorage.setItem("heroes", JSON.stringify(heroState));
-  }, [heroes, good, evil])
+      evil,
+    };
+    console.log(heroState);
+    localStorage.setItem("heroes", JSON.stringify(heroState));
+  }, [heroes, good, evil]);
 
   return (
     <>
       <div className="main">
         <div className="container pt-2">
-          <h2>Search Hero</h2>
+          <h2 className="animate__animated animate__fadeIn">Search Hero</h2>
           <form onSubmit={handleSubmit}>
-            <div className="form-group search-group">
+            <div className="form-group search-group animate__animated animate__fadeIn">
               <input
                 type="text"
                 className="form-control"
@@ -114,30 +114,34 @@ export const SearchScreen = () => {
               </button>
             </div>
           </form>
-          {loading ?
+          {loading ? (
             <Spiner />
-            :
-            (<div>
-              {
-                error ?
-                  <p>{error}</p>
-
-                  :
-                  <div className="card-columns mt-2">
-                    {
-                      
-                      heroesInfo.map(hero => (
-                        <HeroCard key={hero.id} hero={hero} handleAddHero={() => handleAddHero(hero)} />
-                      ))
-
-                    }
-                  </div>
-              }
-            </div>)
-          }
+          ) : (
+            <div>
+              {error ? (
+                <p>{error}</p>
+              ) : (
+                <div className="card-columns mt-2 animate__animated animate__fadeIn">
+                  {heroesInfo.map((hero) => (
+                    <HeroCard
+                      key={hero.id}
+                      hero={hero}
+                      handleHero={() => handleAddHero(hero)}
+                      btnText="Add Hero"
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
-      <Modal title={modal.title} text={modal.text} background={modal.background} color={modal.color} />
+      <Modal
+        title={modal.title}
+        text={modal.text}
+        background={modal.background}
+        color={modal.color}
+      />
     </>
   );
 };

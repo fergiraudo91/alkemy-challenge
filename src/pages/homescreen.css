@@ -11,14 +11,42 @@
   -moz-box-shadow: 7px 20px 16px -3px rgba(0, 0, 0, 0.75);
 }
 
+.card-columns{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team-statitics {
+  background-color: #fff;
+  color: #18191a;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  box-shadow: 7px 20px 16px -3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 7px 20px 16px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 7px 20px 16px -3px rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (max-width: 800px) {
-    .empty-hero{
-        width: 80%;
-    }
+  .empty-hero {
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 400px) {
-    .empty-hero{
-        width: 90%;
-    }
+  .empty-hero {
+    width: 90%;
+  }
+  .appearance-container h4{
+    font-size: 1rem;
+  }
+  .appearance-container{
+    margin-bottom: 10px;
+  }
+  .statitic h5{
+    font-size: 1rem;
+  }
 }

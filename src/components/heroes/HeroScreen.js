@@ -42,19 +42,19 @@ export const HeroScreen = ({history}) => {
       {loading ? (
         <Spiner />
       ) : (
-        <div className="row pt-5 main" style={{ marginRight: "0" }}>
-          <div className="col-4 hero-pic">
+        <div className="row pt-5 main " style={{ marginRight: "0" }}>
+          <div className="col-4 hero-pic animate__animated animate__fadeInLeft">
             <img
               src={hero.image.url}
               alt={hero.name}
               className="img-thumbnail"
             />
           </div>
-          <div className="col-8 hero-details" style={{ paddingRight: "0" }}>
+          <div className="col-8 hero-details animate__animated animate__fadeIn" style={{ paddingRight: "0" }}>
             <h3 style={{color:"orange"}}>{hero.name}</h3>
             <ul className="list-group list-group-flush hero-list">
               <li className="list-group-item">
-                <b className="title-detail">Full Name:</b> {hero.biography["full-name"]}
+                <b className="title-detail">Full Name:</b> {hero.biography["full-name"]} - <b className="title-detail">Alignment:</b> {hero.biography.alignment}
               </li>
               <li className="list-group-item">
                 <h5 className="title-detail">Appearance:</h5>

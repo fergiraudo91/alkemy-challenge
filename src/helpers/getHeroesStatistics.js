@@ -1,5 +1,6 @@
 const getHeroesStatistics = (heroes) => {
-    const heroesAmount = heroes.length;
+  console.log(heroes);
+    const heroesAmount = heroes ? heroes.length : 0;
   const accIntelligence =
     heroesAmount > 0
       ? heroes
