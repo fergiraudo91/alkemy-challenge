@@ -1,3 +1,8 @@
+# Algunas consideraciones:
+
+Se modificó la api agregandole .php para que realice las peticiones sin tener el problema de CORS policies, por otra parte se realizó testing de algunos componentes utilizando jest y enzime. Tener en cuenta de borrar el localStorage para un mismo dominio, porque a veces proyectos similares puede que otros utilicen los mismos nombres y no funcionen bien lo guardado en localStorage.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
