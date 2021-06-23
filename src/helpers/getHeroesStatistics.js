@@ -4,37 +4,37 @@ const getHeroesStatistics = (heroes) => {
   const accIntelligence =
     heroesAmount > 0
       ? heroes
-          .map((hero) => +hero.powerstats.intelligence)
+          .map(({powerstats: {intelligence}}) => intelligence !=='null' ? +intelligence: 0)
           .reduce((prev, next) => prev + next)
       : 0;
   const accStrength =
     heroesAmount > 0
       ? heroes
-          .map((hero) => +hero.powerstats.strength)
+          .map(({powerstats: {strength}}) => strength !== 'null' ? +strength : 0)
           .reduce((prev, next) => prev + next)
       : 0;
   const accSpeed =
     heroesAmount > 0
       ? heroes
-          .map((hero) => +hero.powerstats.speed)
+          .map(({powerstats: {speed}}) => speed !=='null' ? +speed: 0)
           .reduce((prev, next) => prev + next)
       : 0;
   const accDurability =
     heroesAmount > 0
       ? heroes
-          .map((hero) => +hero.powerstats.durability)
+          .map(({powerstats: {durability}}) => durability !== 'null' ? +durability : 0)
           .reduce((prev, next) => prev + next)
       : 0;
   const accPower =
     heroesAmount > 0
       ? heroes
-          .map((hero) => +hero.powerstats.power)
+          .map(({powerstats: {power}}) => power !== 'null' ? +power : 0)
           .reduce((prev, next) => prev + next)
       : 0;
   const accCombat =
     heroesAmount > 0
       ? heroes
-          .map((hero) => +hero.powerstats.combat)
+          .map(({powerstats: {combat}}) => combat !== 'null' ? +combat : 0)
           .reduce((prev, next) => prev + next)
       : 0;
 
