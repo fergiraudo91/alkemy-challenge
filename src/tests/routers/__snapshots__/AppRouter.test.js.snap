@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <AppRouter /> should show the login if it is not authenticated 1`] = `
+<div
+  className="main-login-screen"
+>
+  <div
+    className="login-screen"
+  >
+    <img
+      alt="batman logo"
+      src="assets/img/batman-ico.png"
+    />
+    <form
+      className="login-form"
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-group"
+      >
+        <label
+          className="field"
+          htmlFor="exampleInputEmail1"
+        >
+          User
+        </label>
+        <input
+          className="form-control"
+          id="exampleInputEmail1"
+          name="email"
+          onChange={[Function]}
+          required={true}
+          type="mail"
+          value=""
+        />
+      </div>
+      <div
+        className="form-group"
+      >
+        <label
+          className="field"
+          htmlFor="exampleInputPassword1"
+        >
+          Password
+        </label>
+        <input
+          className="form-control"
+          id="exampleInputPassword1"
+          name="password"
+          onChange={[Function]}
+          required={true}
+          type="password"
+          value=""
+        />
+      </div>
+      <button
+        className="btn btn-light"
+        type="submit"
+      >
+        Login
+      </button>
+    </form>
+  </div>
+</div>
+`;

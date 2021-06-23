@@ -114,27 +114,27 @@ export const SearchScreen = () => {
               </button>
             </div>
           </form>
-          {loading ? (
-            <Spiner />
-          ) : (
-            <div>
-              {error ? (
-                <p>{error}</p>
-              ) : (
-                <div className="card-columns mt-2 animate__animated animate__fadeIn">
-                  {heroesInfo.map((hero) => (
-                    <HeroCard
-                      key={hero.id}
-                      hero={hero}
-                      handleHero={() => handleAddHero(hero)}
-                      btnText="Add Hero"
-                    />
-                  ))}
-                </div>
-              )}
-            </div>
-          )}
         </div>
+        {loading ? (
+          <Spiner />
+        ) : (
+          <>
+            {error ? (
+              <div><p>{error}</p></div>
+            ) : (
+              <div className="card-columns mt-5 animate__animated animate__fadeIn">
+                {heroesInfo.map((hero) => (
+                  <HeroCard
+                    key={hero.id}
+                    hero={hero}
+                    handleHero={() => handleAddHero(hero)}
+                    btnText="Add Hero"
+                  />
+                ))}
+              </div>
+            )}
+          </>
+        )}
       </div>
       <Modal
         title={modal.title}

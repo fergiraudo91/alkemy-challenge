@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <DashBoardRoutes /> should display correctly and show the username 1`] = `
+Array [
+  <nav
+    className="navbar navbar-expand-lg navbar-dark bg-dark"
+  >
+    <a
+      aria-current="page"
+      className="navbar-brand active"
+      href="/home"
+      onClick={[Function]}
+      style={Object {}}
+    >
+      Home 
+      <i
+        className="fas fa-home"
+      />
+    </a>
+    <button
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      className="navbar-toggler"
+      data-target="#navbarNavAltMarkup"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="collapse navbar-collapse justify-content-between"
+      id="navbarNavAltMarkup"
+    >
+      <div
+        className="navbar-nav"
+      >
+        <a
+          aria-current={null}
+          className="nav-link"
+          href="/search"
+          onClick={[Function]}
+        >
+          Search Hero 
+          <i
+            className="fas fa-search"
+          />
+        </a>
+      </div>
+      <div
+        className="navbar-nav"
+      >
+        <span
+          className="nav-link nav-item text-info text-user"
+        >
+          Alkemy
+        </span>
+        <button
+          className="nav-link ml-auto align-content-end mr-3 btn btn-dark"
+          onClick={[Function]}
+          to="/logout"
+        >
+          Logout 
+          <i
+            className="fas fa-sign-out-alt"
+          />
+        </button>
+      </div>
+    </div>
+  </nav>,
+  <div
+    className="main"
+  >
+    <h1>
+      My Team
+    </h1>
+    <div
+      className="empty-hero animate__animated animate__fadeIn"
+    >
+      <h5>
+        Your team is empty
+      </h5>
+      <p>
+        Please search a hero and add it to your team
+      </p>
+      <a
+        className="btn btn-warning"
+        href="/search"
+        onClick={[Function]}
+      >
+        Search Hero
+      </a>
+    </div>
+  </div>,
+]
+`;
