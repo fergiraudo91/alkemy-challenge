@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { HeroCard } from "../components/heroes/HeroCard";
 import { ProgressBar } from "../components/ui/ProgressBar";
@@ -8,7 +8,7 @@ import { getMaxStatiticsValue } from "../helpers/getMaxStatiticsValue";
 import "./homescreen.css";
 
 export const HomeScreen = () => {
-  const { heroes, deleteHeroes, addGood, addEvil } = useContext(HeroContext);
+  const { heroes, deleteHeroes, addGood, addEvil, good, evil } = useContext(HeroContext);
   const {
     heroesAmount,
     accIntelligence,
@@ -29,8 +29,16 @@ export const HomeScreen = () => {
       addEvil(-1);
     }
     deleteHeroes(heroId);
-    localStorage.setItem("heroes", JSON.stringify(heroes));
   };
+
+  useEffect(() => {
+    const heroState = {
+      heroes,
+      good,
+      evil
+    }
+    localStorage.setItem("heroes", JSON.stringify(heroState));
+  }, [heroes, good, evil])
 
   const { maxValue, highestVariable, backgroundClass } = getMaxStatiticsValue(
     accIntelligence,
